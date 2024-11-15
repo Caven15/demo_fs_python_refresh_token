@@ -1,0 +1,13 @@
+<div *ngIf="loading">
+  <p>Chargement en cours... Veuillez patienter pendant que nous récupérons les utilisateurs.</p>
+  <p>Temps d'attente restant : {{ countdown }} secondes</p>
+</div>
+
+<div *ngIf="!loading">
+  <h2>Liste des utilisateurs</h2>
+  <ul>
+    <li *ngFor="let utilisateur of utilisateurs">
+      {{ utilisateur.username }}
+    </li>
+  </ul>
+</div>

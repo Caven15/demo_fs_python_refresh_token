@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Nom d'utilisateur</label>
+    <input id="username" formControlName="username" type="text" />
+    <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+      Nom d'utilisateur requis
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Mot de passe</label>
+    <input id="password" formControlName="password" type="password" />
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      Mot de passe requis
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+
+  <div *ngIf="serverErrorMessage" class="error">
+    {{ serverErrorMessage }}
+  </div>
+</form>

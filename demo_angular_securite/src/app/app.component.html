@@ -1,0 +1,16 @@
+<div>
+  @if (authStatus()) {
+  <button (click)="voirUtilisateurs()">Voir tous les utilisateurs</button>
+  <button (click)="logout()">Déconnexion</button>
+  }
+  @else{
+  <button (click)="connecter()">Se connecter</button>
+  <button (click)="enregistrer()">S'enregistrer</button>
+
+  }
+  <button  (click)="home()">home</button>
+
+</div>
+
+
+<router-outlet></router-outlet>
